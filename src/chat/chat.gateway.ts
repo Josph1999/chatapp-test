@@ -14,9 +14,9 @@ import { UsersService } from "src/users/users.service";
 import { WsGuard } from "./wsguard";
 
 // @UseGuards(WsGuard)
-@WebSocketGateway({
+@WebSocketGateway(process.env.PORT || 8080,{
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
   },
   serveClient: true,
   transports: ["websocket"],
