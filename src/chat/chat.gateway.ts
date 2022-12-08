@@ -16,7 +16,7 @@ import { WsGuard } from "./wsguard";
 // @UseGuards(WsGuard)
 @WebSocketGateway({
   cors: {
-    origin: "*",
+    origin: "http://localhost:3000",
   },
   serveClient: true,
   transports: ["websocket"],
