@@ -14,14 +14,7 @@ import { UsersService } from "src/users/users.service";
 import { WsGuard } from "./wsguard";
 
 // @UseGuards(WsGuard)
-@WebSocketGateway(8080,{
-  cors: {
-    origin: "*",
-  },
-  serveClient: true,
-  transports: ["websocket"],
-  rejectUnauthorized: true,
-})
+@WebSocketGateway()
 export class ChatGateway implements OnGatewayInit {
   constructor(
     private userService: UsersService,
